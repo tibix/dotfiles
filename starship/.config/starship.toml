@@ -74,6 +74,6 @@ format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
 
 [hostname]
 ssh_only = true
-style = "bg:#769ff0 fg:#a3aed2" 
-format = '[[ $ssh_symbol on $hostname](fg:#769ff0 bg:#000000)]'
+style = "bg:#769ff0 fg:#111222" 
+format = '[ $ssh_symbol on $hostname ]($style)'
 disabled = false

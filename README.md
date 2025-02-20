@@ -6,13 +6,19 @@
 ---
 
 ## Example Usage
-- Install _gnu stow_ utility
+- Install __gnu stow__ utility
 - Clone the repo
 - cd into the repo
-- "stow" away the desired config files 
+- **stow** away the desired config files 
 
 ---
 
-Let's assume in the repo you have the config files for *tmux*, *starship* and *kitty*, and we want to deploy *tmux's* config files. In this situation, the command to execute would be: 
+Let's assume in the repo you have the config files for **tmux**, **starship** and **kitty**, and we want to deploy **tmux's** config files. In this situation, the command to execute would be: 
 
 `stow -S tmux -t ~/.`
+
+where **-S** flag targets a specifi folder within the repo and **-t** is used to specify the target directory.
+
+For more information on how __gnu stow__ works, please refer to the help and/or their GitHub page.
+
+---

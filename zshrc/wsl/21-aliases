@@ -1,0 +1,50 @@
+alias rg="rg --hidden --glob '!.git'"
+alias k='kubectl'
+alias minikube='minikube.exe'
+alias kubectl='kubectl.exe'
+alias ghcs='gh copilot suggest'
+
+alias clera='clear'
+alias cls='clear'
+alias ls='exa --icons -g'
+alias ll='ls -l'
+alias la='ls -la'
+alias lT='ls -T'
+
+alias art='php artisan'
+alias lg='lazygit'
+
+alias pfzf='fzf --preview '\''\'\'''\''batcat --color=always --style=numbers --line-range :500 {}'\'''
+alias aliases='alias | fzf --height 40% --layout reverse --border'
+alias LazyVim="NVIM_APPNAME=LazyVim nvim"
+alias AstroNvim="NVIM_APPNAME=AstroNvim nvim"
+alias NvChad="NVIM_APPNAME=NvChad nvim"
+
+alias podman='podman-remote-static-linux_amd64'
+alias less='batcat'
+
+alias update='sudo apt-get update -y'
+alias upgrade='sudo apt-get upgrade -y'
+alias upgradable='sudo apt list --upgradable'
+alias install='sudo apt-get install -y'
+alias installed='sudo apt list --installed'
+alias uninstall='sudo apt-get remove -y'
+alias autoclean='sudo apt auto-clean'
+alias autoremove='sudo apt autoremove'
+alias search='sudo apt-cache search'
+alias info='sudo apt info'
+
+
+function nvims() {
+  items=("default" "AstroNvim" "LazyVim" "NvChad")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=20% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
+
+bindkey -s ^n "nvims\n"

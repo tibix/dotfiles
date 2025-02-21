@@ -1,0 +1,25 @@
+# Load these aliases only if OS is Darwin based
+if command -v brew &> /dev/null ;then
+    # Homebrew
+    alias bls='brew list'
+    alias blsc='brew list --cask'
+    alias binfo='brew info'
+    alias binstall='brew install'
+    alias bsearch='brew search'
+    alias bupdate='brew update'
+    alias bupgrade='brew upgrade'
+    alias buninstall='brew uninstall'
+    alias bcleanup='brew cleanup'
+    alias bdoctor='brew doctor'
+    alias bserv='brew services'
+    alias bpin='brew pin'
+    alias bunpin='brew unpin'
+    alias bdeps='brew deps'
+    alias bdepsc='brew deps --cask'
+    alias bdepsd='brew deps --include-build'
+    alias bdepsdc='brew deps --include-build --cask'
+    alias bdepsr='brew deps --reverse'
+    alias bdepsrc='brew deps --reverse --cask'
+    alias bdepsrd='brew deps --reverse --include-build'
+    alias bdepsrdc='brew deps --reverse --include-build --cask'
+fi

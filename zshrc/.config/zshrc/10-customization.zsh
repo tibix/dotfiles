@@ -1,7 +1,6 @@
-plugins=( git zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search fast-syntax-highlighting zsh-autocomplete )
+plugins=( git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting )
 
 source $ZSH/oh-my-zsh.sh
-
 source <(fzf --zsh)
 source <(gh completion -s zsh)
 

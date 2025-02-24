@@ -13,8 +13,8 @@ alias lT='ls -T'
 alias lH='ls -ltr'
 
 # NVIM ALIASES #
+alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
-alias nvim-kickstart="NVIM_APPNAME=kickstart nvim"
 alias nvim-chad="NVIM_APPNAME=NvChad nvim"
 alias nvim-cosmic="NVIM_APPNAME=CosmicNvim nvim"
 alias nvim-lunar="NVIM_APPNAME=LunarVim nvim"
@@ -47,15 +47,17 @@ alias art='php artisan'
 
 # List all nvims flavors and load the selected one
 function nvims() {
-	items=("default","AstroNvim","LazyVim","NvChad", "kickstart", "CosmicNvim", "LunarVim")
-	config=$(print "%s\n" "${items[@]}" | fzf --prompt="Load  Config for >> " --height=20% --layout=reverse --border --exit-0)
+	local vims=("default" "AstroNvim" "LazyVim" "NvChad" "CosmicNvim" "LunarVim")
+
+	config=$(printf "%s\n" "${vims[@]}" | fzf --prompt="Load  Config for >> " --height=20% --layout=reverse --border --exit-0)
+
 	if [[ -z $config ]]; then
 		echo "Nothing selected"
 		return 0
 	elif [[ $config == "default" ]]; then
 		config=""
 	fi
-	NVIM_APPNAME=$config nvim $@
+	NVIM_APPNAME=$config nvim "$@"
 }
 
 bindkey -s ^n "nvims\n"

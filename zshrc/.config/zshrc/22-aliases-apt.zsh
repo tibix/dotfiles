@@ -10,4 +10,5 @@ if command -v apt &> /dev/null; then
     alias autoremove='sudo apt autoremove'
     alias search='sudo apt-cache search'
     alias info='sudo apt info'
+    alias show='sudo apt show'
 fi

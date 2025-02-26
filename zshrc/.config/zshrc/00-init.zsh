@@ -1,4 +1,4 @@
-export BAT_THEME="Catppuccin-mocha"
+export BAT_THEME="Catppuccin Mocha"
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 export REPOS_DIR=$HOME/REPOS

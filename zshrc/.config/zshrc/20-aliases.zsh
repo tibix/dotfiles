@@ -65,7 +65,7 @@ bindkey -s ^n "nvims\n"
 # List all repos in $HOME/REPOS and make a searcheable list unsing fzf
 # When selected, it will cd into the selected repo
 function repos() {
-  REPOS="$(cat $HOME/.tmp/gitfiles | sort -d | xargs basename)"
+  REPOS="$(cat $HOME/.tmp/gitfiles | sort -d | xargs -n 1 basename)"
   repo=$(printf "%s\n" "${REPOS[@]}" | fzf --prompt=" Repos >> " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $repo ]]; then
      echo "Nothing selected"

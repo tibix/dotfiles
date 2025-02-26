@@ -26,6 +26,11 @@ ZSH_HIGHLIGHT_STYLES[builtin]='fg=#f4b8e4,bold,underline'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=#f4b8e4,bold,underline'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=#f4b8e4'
 
+FZF_DEFAULT_OPTS="\
+  --color=bg+:#313244,spinner:#f5e0dc,hl:#f38ba8 \
+  --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+  --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+
 # Export TMUX_AUTOSTART=1 on WSL at work (ROTDASCAL01) and on Mac (TBMBPM3.local)
 if [ "$(hostname)" = "ROTDASCAL01" ] || [ "$(hostname)" = "TBMBPM3.local" ]; then
     export TMUX_AUTOSTART=1

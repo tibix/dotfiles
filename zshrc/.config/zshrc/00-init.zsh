@@ -1,3 +1,4 @@
+export NVIM_APPNAME="LazyVim"
 export BAT_THEME="Catppuccin Mocha"
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
